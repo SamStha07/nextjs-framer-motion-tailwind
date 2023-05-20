@@ -4,6 +4,8 @@ import Layout from "@/components/layout";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import profilePic from "../../public/images/profile/developer-pic-1.png";
+import lightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
+import HireMe from "@/components/hire-me";
 
 const imageMotion = {
   initial: {
@@ -15,18 +17,6 @@ const imageMotion = {
     x: 0,
     transition: {
       duration: 2,
-    },
-  },
-};
-
-const descMotion = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      delay: 1,
     },
   },
 };
@@ -109,6 +99,12 @@ export default function Home() {
           </motion.div>
         </div>
       </Layout>
+
+      <HireMe />
+
+      <div className="absolute bottom-8 right-8 w-24">
+        <Image src={lightBulb} alt="sam" classname="w-full h-auto" />
+      </div>
     </main>
   );
 }
