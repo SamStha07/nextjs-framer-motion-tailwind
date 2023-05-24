@@ -1,6 +1,5 @@
-import { useScroll } from "framer-motion";
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 import LiIcon from "./li-icon";
 
 const Details = ({ position, company, companyLink, time, address, work }) => {
@@ -11,7 +10,12 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
       className="mx-auto my-8 flex w-[60%] flex-col items-center justify-between first:mt-0 last:mb-0"
     >
       <LiIcon reference={ref} />
-      <div>
+      <motion.div
+        initial={{ y: 50 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, type: "spring" }}
+        exit={{ y: 50 }}
+      >
         <h3 className="text-2xl font-bold capitalize">
           {position}&nbsp;
           <a
@@ -26,13 +30,13 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
           {time} | {address}
         </span>
         <p className="w-full font-medium">{work}</p>
-      </div>
+      </motion.div>
     </li>
   );
 };
 
 const Experience = () => {
-  const ref = useRef();
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],
@@ -40,7 +44,7 @@ const Experience = () => {
 
   return (
     <div className="my-64">
-      <h2 className="mb-32 w-full text-center text-8xl font-bold">
+      <h2 className="w-full mb-32 font-bold text-center text-8xl">
         Experience
       </h2>
 
@@ -49,7 +53,7 @@ const Experience = () => {
           className="absolute left-9 top-0 h-full w-[4px] origin-top bg-dark"
           style={{ scaleY: scrollYProgress }}
         />
-        <ul className="relative ml-4 flex w-full flex-col items-start justify-between">
+        <ul className="flex flex-col items-start justify-between w-full ml-4">
           <Details
             position="Software Engineer"
             company="Google"

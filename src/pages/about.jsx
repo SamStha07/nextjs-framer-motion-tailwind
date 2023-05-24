@@ -7,6 +7,7 @@ import profilePic from "../../public/images/profile/developer-pic-2.jpg";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/skills";
 import Experience from "@/components/experience";
+import Education from "@/components/education";
 
 // 1.54
 
@@ -44,11 +45,11 @@ const AboutPage = () => {
         <title>Sam | About Page</title>
         <meta name="description" content="description" />
       </Head>
-      <main className="flex w-full flex-col items-center justify-center">
+      <main className="flex flex-col items-center justify-center w-full">
         <Layout className="pt-16">
           <AnimatedText text="Passion Fuels Purpose!" />
-          <div className="mt-10 grid w-full grid-cols-8 gap-16">
-            <div className="col-span-3 flex flex-col items-start justify-start">
+          <div className="grid w-full grid-cols-8 gap-16 mt-10">
+            <div className="flex flex-col items-start justify-start col-span-3">
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
                 Biography
               </h2>
@@ -65,37 +66,37 @@ const AboutPage = () => {
                 {`Whether I'm working on a website, mobile app, or other digital product, I bring my commitment to design excellence and user-centered thinking to every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.`}
               </p>
             </div>
-            <div className="relative col-span-3 h-max rounded-2xl border-2 border-solid border-dark bg-light p-8">
+            <div className="relative col-span-3 p-8 border-2 border-solid h-max rounded-2xl border-dark bg-light">
               <div className="absolute -right-3 top-0 -z-10 h-[103%] w-[102%] rounded-[2rem] bg-dark" />
               <Image
                 src={profilePic}
                 alt="sam"
-                className="h-auto w-full rounded-2xl"
+                className="w-full h-auto rounded-2xl"
                 priority={true}
               />
             </div>
-            <div className="col-span-2 flex flex-col items-end justify-between">
+            <div className="flex flex-col items-end justify-between col-span-2">
               <div className="flex flex-col items-end justify-center">
-                <span className="inline-block text-7xl font-bold">
+                <span className="inline-block font-bold text-7xl">
                   <AnimatedNumbers value={50} />+
                 </span>
-                <h2 className="text-dark/2 text-xl font-medium capitalize">
+                <h2 className="text-xl font-medium capitalize text-dark/2">
                   satisfied clients
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
-                <span className="inline-block text-7xl font-bold">
+                <span className="inline-block font-bold text-7xl">
                   <AnimatedNumbers value={40} />+
                 </span>
-                <h2 className="text-dark/2 text-xl font-medium capitalize">
+                <h2 className="text-xl font-medium capitalize text-dark/2">
                   projects completed
                 </h2>
               </div>
               <div className="flex flex-col items-end justify-center">
-                <span className="inline-block text-7xl font-bold">
+                <span className="inline-block font-bold text-7xl">
                   <AnimatedNumbers value={3} />+
                 </span>
-                <h2 className="text-dark/2 text-xl font-medium capitalize">
+                <h2 className="text-xl font-medium capitalize text-dark/2">
                   years of experience
                 </h2>
               </div>
@@ -104,6 +105,7 @@ const AboutPage = () => {
 
           <Skills />
           <Experience />
+          <Education />
         </Layout>
       </main>
     </>
