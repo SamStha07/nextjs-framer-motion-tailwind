@@ -33,7 +33,7 @@ const useThemeSwitcher = () => {
     mediaQuery.addEventListener("change", handleChange);
 
     return () => mediaQuery.removeEventListener("change", handleChange);
-  }, [preferDarkQuery]);
+  }, []);
 
   useEffect(() => {
     if (mode === "dark") {

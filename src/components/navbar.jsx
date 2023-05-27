@@ -15,7 +15,10 @@ import useThemeSwitcher from "@/hooks/useThemeSwitcher";
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
   return (
-    <Link href={href} className={`${className} group relative`}>
+    <Link
+      href={href}
+      className={`${className} group relative  dark:text-light`}
+    >
       {title}
       <span
         className={classNames(
